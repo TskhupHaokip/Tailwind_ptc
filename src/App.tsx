@@ -6,7 +6,7 @@ import Home from "./pages/Home"
 function App() {
   
   return (
-    <div  className="min-h-screen bg-base-300">
+    <div  className="flex flex-x flex-col min-h-screen h-dvh bg-base-300">
       <Topbar/>
       <SideBar />
       <Home />
