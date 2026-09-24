@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  font-family: 'Inter', sans-serif;
+}
+
+.sidebar-gradient {
+  background: linear-gradient(135deg, #351A5E, #213044);
+  border-radius: 15px;
+}
