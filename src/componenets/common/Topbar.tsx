@@ -1,7 +1,12 @@
 import Coloring, { closeDrawer } from "./Coloring";
 
 
-const Topbar = () => {
+type SideBarProps = {
+  setPage: (page: string) => void;
+};
+
+
+const Topbar = ({setPage}:SideBarProps) => {
   return (
     <div  className="navbar min-h-0 h-11.5 p-2 bg-slate-950 gap-1.5">
         <div className="flex-none" >
@@ -26,7 +31,7 @@ const Topbar = () => {
         </div>
        
         <div onClick={closeDrawer} className="flex-none">
-            <a href="#register" className="btn btn-ghost rounded-[7px] text-[21px] ">
+            <a onClick={() => setPage("register")} href="#register" className="btn btn-ghost rounded-[7px] text-[21px] ">
                 <Coloring name="Register"/>
             </a>
 

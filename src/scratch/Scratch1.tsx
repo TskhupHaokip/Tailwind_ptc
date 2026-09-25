@@ -14,7 +14,7 @@ export const Scratch1 = () => {
 
 export const Scratch2 = () => {
   return (
-    <div className="aura-2 h-full">
+    <div className="aura-2 h-full ">
       <div className="aura-content-2 h-full">
         <h1><Coloring name="Card 2"/> </h1>
         <p><Coloring name="This is Made From Scratch"/></p>

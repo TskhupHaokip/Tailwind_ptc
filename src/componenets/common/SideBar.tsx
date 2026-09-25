@@ -1,7 +1,13 @@
+
 import  { SideItems } from "./Coloring";
 
 
-const SideBar = () => {
+type SideBarProps = {
+  setPage: (page: string) => void;
+};
+
+const SideBar = ({setPage}:SideBarProps) => {
+ 
   return (
     <div className="drawer ">
       <input id="my-drawer-1" type="checkbox" className="drawer-toggle" />
@@ -14,7 +20,7 @@ const SideBar = () => {
         ></label>
 
         <ul className="sidebar-gradient min-h-[93%] flex flex-col w-60 p-3 ">
-          <SideItems/>
+          <SideItems setPage={setPage}/>
         </ul>
 
       </div>
