@@ -10,3 +10,83 @@
   background: linear-gradient(135deg, #351A5E, #213044);
   border-radius: 15px;
 }
+
+.aura-1 {
+  position: relative;
+  width: 320px;
+  padding: 3px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.aura-1::before {
+  content: "";
+  position: absolute;
+  inset: -100%;
+  background: conic-gradient(
+    red,
+    orange,
+    yellow,
+    lime,
+    cyan,
+    blue,
+    violet,
+    red
+  );
+  animation: aura-spin 4s linear infinite;
+}
+
+.aura-content-1 {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  border-radius: 13px;
+  background: #1f1f1f;
+  color: white;
+}
+
+@keyframes aura-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.aura-2 {
+  position: relative;
+  padding: 3px;
+  border-radius: 16px;
+  overflow:hidden
+
+}
+
+.aura-2::before {
+  content: "";
+  position: absolute;
+  inset: -100%;
+  background: conic-gradient(
+    blue,
+    red,
+    green,
+    yellow,
+    orange,
+    purple,
+    brown,
+    black
+  );
+  animation: aura-2-spin 4s linear infinite;
+}
+
+.aura-content-2{
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  border-radius: 13px;
+  background: #1f1f1f;
+}
+
+
+@keyframes aura-2-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

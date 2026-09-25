@@ -1,7 +1,12 @@
+import Aura1 from "../componenets/cards/Aura1";
 import Card from "../componenets/cards/Card";
 import ProfileCard from "../componenets/cards/ProfileCard";
+import Subscription from "../componenets/cards/Subscription";
 import Coloring from "../componenets/common/Coloring";
- 
+import {Scratch1,Scratch2} from "../scratch/Scratch1";
+
+
+
 const Home = () => {
   return (
     <div
@@ -9,14 +14,15 @@ const Home = () => {
       className="flex flex-col flex-1 items-stretch min-h-0 overflow-y-auto p-2.5 bg-base-300 gap-3
 
      ">
-      <div className="grid flex-1 min-h-0 grid-cols-[20rem_1fr]  bg-violet-300 p-5 gap-2">
+      <div className="grid flex-1 min-h-0 grid-cols-[20rem_1fr]   p-5 gap-2">
         < ProfileCard />
         <Card/>
 
-        <p>
-          <Coloring name="This Is Home Page" />
-        </p>
-        <p className="col-span-2">
+        <Aura1/>
+        <Subscription />
+        <Scratch1 />
+        <p className="">
+          <Scratch2 />
         <Coloring
           name="
           911 views  Sep 13, 2026
@@ -68,6 +74,8 @@ const Home = () => {
           Magnam, tempore.  "
         />
         </p>
+
+
 
       </div>
       

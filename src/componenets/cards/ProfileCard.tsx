@@ -19,7 +19,8 @@ const ProfileCard = ({
            <p><Coloring name={description} /></p>
         </div>
         <div className="card-actions justify-center m-3">
-            <a href="#" className="btn btn-ghost rounded-[7px] text-[21px] bg-black">
+            <a href="#" className="btn btn-ghost rounded-[7px] text-[21px] bg-black
+            hover:bg-gray-200 active:bg-green-600   ">
                 <Coloring name="Edit" />
             </a>
 

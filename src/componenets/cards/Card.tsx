@@ -9,7 +9,7 @@ const Card = () => {
         <p>A project description.</p>
 
         <div className="card-actions">
-            <button className="btn btn-primary">
+            <button className="btn btn-soft btn-success rounded-[10px]">
                 Open
             </button>
         </div>
