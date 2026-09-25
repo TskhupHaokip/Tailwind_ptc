@@ -90,3 +90,25 @@
     transform: rotate(360deg);
   }
 }
+
+
+.toast-fade {
+  animation: toastFade 3s forwards;
+}
+
+@keyframes toastFade {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  80% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

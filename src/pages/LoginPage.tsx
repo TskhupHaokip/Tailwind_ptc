@@ -3,19 +3,30 @@ import { AuthContext } from "../context/AuthContext";
 
 type LoginPageProps = {
   setPage: (page: string) => void;
+  showToast: (message: string, status: boolean) => void;
 };
 
-const LoginPage = ({setPage}:LoginPageProps) => {
+const LoginPage = ({ setPage, showToast }: LoginPageProps) => {
   const context = useContext(AuthContext);
+
   const [username, setUsername] = useState("");
-  const [password,setUserPass] = useState("")
-  
+  const [password, setUserPass] = useState("");
+
   const handleLogin = () => {
+    if (!username || !password) {
+      showToast("Invalid Credentials", false);
+      return;
+    }
+
     const success = context?.login(username, password);
-    if (!username && !password) return
-    if (!success) return
-    setPage("home")
-    
+
+    if (!success) {
+      showToast("Something Wrong", false);
+      return;
+    }
+
+    showToast("Login Success", true);
+    setPage("home");
   };
 
   return (
@@ -24,6 +35,7 @@ const LoginPage = ({setPage}:LoginPageProps) => {
         <legend className="fieldset-legend">Login</legend>
 
         <label className="label">Username</label>
+
         <input
           type="text"
           id="username"
@@ -34,15 +46,19 @@ const LoginPage = ({setPage}:LoginPageProps) => {
         />
 
         <label className="label">Password</label>
+
         <input
           type="password"
           id="password"
           className="input"
           placeholder="Password"
-          onChange={(e) => setUserPass(e.target.value)  }
+          onChange={(e) => setUserPass(e.target.value)}
         />
 
-        <button onClick={handleLogin} className="btn btn-neutral hover:bg-base-300 mt-4">
+        <button
+          onClick={handleLogin}
+          className="btn btn-neutral hover:bg-base-300 mt-4"
+        >
           Login
         </button>
       </fieldset>

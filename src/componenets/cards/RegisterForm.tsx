@@ -23,33 +23,43 @@ const RegisterForm = ({ setPage }: RedirecrProps) => {
     alert("something wrong");
   };
 
-  return (
-    <div className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-      <form action="" onSubmit={handleRegister} className="form-box text-2xl">
-        <legend className="fieldset-legend">Register Form</legend>
+return (
+  <fieldset className="fieldset bg-base-200 border-base-300 text-2xl rounded-box w-xs border p-4">
+    <legend className="fieldset-legend">Register Form</legend>
 
-        <label className="label">Username</label>
-        <input
-          onChange={(e) => setUsername(e.target.value)}
-          type="text"
-          className="input"
-          placeholder="Username"
-        />
+    <form onSubmit={handleRegister} className=" flex  flex-1 flex-col gap-2 text-2xl ">
+      <label className="label ">Username</label>
 
-        <label className="label">Password</label>
-        <input
-          type="password"
-          onChange={(e) => setUserPass(e.target.value)}
-          className="input"
-          placeholder="Password"
-        />
+      <input
+        onChange={(e) => setUsername(e.target.value)}
+        type="text"
+        className="input"
+        placeholder="Username"
+        required
+        minLength={3}
+      />
 
-        <button type="submit" className="btn btn-neutral mt-4">
-          Register
-        </button>
-      </form>
-    </div>
-  );
+      <label className="label">Password</label>
+
+      <input
+        type="password"
+        onChange={(e) => setUserPass(e.target.value)}
+        className="input"
+        placeholder="Password"
+        required
+        minLength={8}
+      />
+
+      <button
+        type="submit"
+        className="btn btn-neutral hover:bg-base-300 mt-4"
+      >
+        Register
+      </button>
+    </form>
+  </fieldset>
+);
+
 };
 
 export default RegisterForm;
